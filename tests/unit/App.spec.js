@@ -1,8 +1,8 @@
+import Vue from 'vue';
+import App from '@/App';
+
 describe("App", () => {
-  it("passing test", () => {
-    expect(true).toBeTruthy();
-  });
-  it("failing test", () => {
-    expect(false).toBeFalsy();
+  it ('should render correct contents', () => {
+    const Constructor = Vue.extend(App);
   });
 });
