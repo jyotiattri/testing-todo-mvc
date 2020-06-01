@@ -1,14 +1,14 @@
 import Vue from 'vue'; 
 import App from '@/App';
+import { shallowMount } from '@vue/test-utils';
 
-describe('App.vue', () => {
+
+describe('App', () => {
   it ('should render correct contents', () => {
-    const Constructor = Vue.extend(App);
-    const vm = new Constructor().$mount();
-
-    expect(vm.$el.querySelector('.title').textContent)
+    let wrapper = shallowMount(App);
+    expect(wrapper.find('.title').text())
     .toBe('todos');
-    expect(vm.$el.querySelector('.new-todo').placeholder)
+    expect(wrapper.find('.new-todo').element.placeholder)
     .toBe('What needs to be done?');
   });
 
